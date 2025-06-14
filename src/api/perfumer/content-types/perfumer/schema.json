@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "perfumers",
+  "info": {
+    "singularName": "perfumer",
+    "pluralName": "perfumers",
+    "displayName": "Perfumer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "perfumes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::perfume.perfume",
+      "mappedBy": "perfumers"
+    }
+  }
+}

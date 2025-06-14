@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "perfumes",
+  "info": {
+    "singularName": "perfume",
+    "pluralName": "perfumes",
+    "displayName": "Perfume",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "launch_year": {
+      "type": "integer",
+      "required": true
+    },
+    "recommended_for": {
+      "type": "string"
+    },
+    "fun_fact": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "price_range": {
+      "type": "enumeration",
+      "enum": [
+        "budget",
+        "mid_range",
+        "premium",
+        "luxury"
+      ]
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand.brand",
+      "inversedBy": "perfumes"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "perfumes"
+    },
+    "fragrance_notes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::fragrance-note.fragrance-note",
+      "inversedBy": "perfumes"
+    },
+    "perfumers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::perfumer.perfumer",
+      "inversedBy": "perfumes"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

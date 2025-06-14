@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fragrance_notes",
+  "info": {
+    "singularName": "fragrance-note",
+    "pluralName": "fragrance-notes",
+    "displayName": "FragranceNote"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "perfumes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::perfume.perfume",
+      "mappedBy": "fragrance_notes"
+    }
+  }
+}
